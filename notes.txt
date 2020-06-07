@@ -1,4 +1,0 @@
-transform: rotateY(180deg)
-it makes component back face
-backface-visibility: visible/hidden
-for show the backface we made
