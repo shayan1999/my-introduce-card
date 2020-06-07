@@ -1,0 +1,154 @@
+@font-face {
+    font-family: sans;
+    src: url('sans.ttf');
+}
+*{
+    margin: 0;
+    padding: 0;
+}
+
+body{
+    background: antiquewhite;
+    font-family: sans;
+}
+
+.center,.front-face,
+.contents,.back-face{
+    position: absolute;
+}
+
+.center{
+    top: 50%;
+    left: 50%;
+    transform: translate( -50%, -50%);
+    height: 400px;
+    width: 320px;
+    transform-style: preserve-3d;
+    perspective: 1000px;
+}
+
+.front-face,.back-face{
+    height: 100%;
+    width: 100%;
+    text-align: center;
+    background: #ff1736;
+    border-radius: 10px;
+    backface-visibility: hidden;
+    transform-style: preserve-3d;
+    transition: transform 0.5s cubic-bezier(0.4, 0.2, 0.2, 1);
+}
+
+.contents{
+    left: 0;
+    top: 50%;
+    width: 100%;
+    perspective: 100px;
+    transform: translateY(-50%) translateZ(60px) scale(.94);
+}
+
+.front p{
+    color: white;
+    font-size: 35px;
+    margin-bottom: 15px;
+}
+
+.front p:after{
+    content: '';
+    display: block;
+    left: 0;
+    top: 0;
+    height: 2px;
+    width: 100px;
+    background: white;
+    margin: 0 auto;
+    margin-top: 10px;
+}
+
+.front span{
+    color: white;
+    font-size: 20px;
+}
+
+.back-face{
+    transform: rotateY(180deg);
+    background: white;
+}
+
+.back{
+    color: black;
+}
+
+.back h2{
+    font-size: 33px;
+    padding-bottom: 5px;
+
+}
+
+.back span{
+    font-size: medium;
+    color: black;
+    opacity: 0.7;
+}
+
+.backSpan:after{
+    content: '';
+    display: block;
+    left: 0;
+    top: 0;
+    height: 2px;
+    width: 80%;
+    background: black;
+    margin: 0 auto;
+    margin-top: 15px;
+}
+
+.back .details{
+    margin-top: 20px;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    padding: 0 30px;
+    align-items: center;
+}
+
+.details img{
+    width: 100px;
+    height: 80px;
+    border-radius: 30px;
+}
+
+.details a{
+    color: black;
+    font-size: 22px;
+    padding: 0 10px;
+}
+
+.center:hover > .back-face{
+    transform: rotateY(0deg);
+}
+
+.center:hover > .front-face{
+    transform: rotateY(-180deg);
+}
+
+i .tooltiptext {
+    opacity: 0;
+    visibility: hidden;
+    background-color: black;
+    color: #fff;
+    text-align: center;
+    border-radius: 6px;
+    padding:5px;
+    /* Position the tooltip */
+    position: absolute;
+    z-index: 1;
+    margin-right: -5%;
+    transition: .25s;
+    display: block;
+    margin-top: 5px;
+  }
+  
+  i:hover .tooltiptext {
+    visibility: visible;
+    opacity: 0.5;
+  }
